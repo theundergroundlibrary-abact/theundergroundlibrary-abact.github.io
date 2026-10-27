@@ -7,20 +7,20 @@
 <meta name="description" content="The Underground Library — una citazione letteraria per il tuo viaggio.">
 <title>The Underground Library</title>
 <style>
-:root{--red:#c9232c;--ink:#171717;--paper:#f7f5f0;--muted:#77736d}
-*{box-sizing:border-box}html{min-height:100%;background:var(--red)}body{margin:0;min-height:100vh;padding:clamp(14px,3vw,34px);font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--red)}
-.page{position:relative;max-width:860px;min-height:calc(100vh - clamp(28px,6vw,68px));margin:auto;background:var(--paper);display:flex;flex-direction:column;padding:clamp(24px,6vw,66px);overflow:hidden}
-.topline{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #d8d3cb;padding-bottom:18px}.mark{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.stamp{color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-align:right;text-transform:uppercase}
-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,9vh,94px) 0}.eyebrow{color:var(--red);font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;margin:0 0 20px}.quote{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,6vw,4.65rem);line-height:1.12;letter-spacing:-.035em;margin:0;max-width:730px}.quote::before{content:'“';color:var(--red)}.quote::after{content:'”';color:var(--red)}
-.attribution{margin-top:clamp(28px,5vh,48px);padding-left:18px;border-left:3px solid var(--red)}.book{font-family:Georgia,'Times New Roman',serif;font-size:1.15rem;font-style:italic;margin:0 0 6px}.author{color:var(--muted);font-size:.92rem;margin:0}.action{margin-top:clamp(38px,7vh,64px);display:flex;align-items:center;gap:18px;flex-wrap:wrap}.button{appearance:none;border:0;background:var(--red);color:#fff;padding:16px 21px;font-size:.78rem;font-weight:800;letter-spacing:.1em;cursor:pointer;transition:background .2s,transform .2s}.button:hover{background:#a91c24;transform:translateY(-2px)}.button:focus-visible{outline:3px solid var(--ink);outline-offset:4px}.hint{color:var(--muted);font-size:.82rem}
-footer{border-top:1px solid #d8d3cb;padding-top:16px;color:var(--muted);font-size:.72rem;line-height:1.5;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-title{color:var(--ink);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:560px){body{padding:10px}.page{min-height:calc(100vh - 20px);padding:24px 22px}.topline{align-items:flex-start}.stamp{max-width:125px;line-height:1.5}main{padding:52px 0}.quote{font-size:clamp(2rem,10vw,3.1rem)}.action{align-items:flex-start;flex-direction:column}.button{width:100%}footer{font-size:.68rem}}
+:root{--red:#bd242d;--red-dark:#951b23;--ink:#201d1b;--paper:#fffdf9;--canvas:#eee9e1;--muted:#746e68;--rule:#e2ddd5}
+*{box-sizing:border-box}html{min-height:100%;background:var(--canvas)}body{margin:0;min-height:100vh;min-height:100svh;padding:clamp(16px,4vw,52px);font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:radial-gradient(circle at 8% 12%,rgba(189,36,45,.08) 0 2px,transparent 3px),var(--canvas)}
+.page{position:relative;max-width:960px;min-height:calc(100vh - clamp(32px,8vw,104px));min-height:calc(100svh - clamp(32px,8vw,104px));margin:auto;background:var(--paper);border-top:7px solid var(--red);box-shadow:0 24px 70px rgba(44,34,27,.11);display:flex;flex-direction:column;padding:clamp(28px,6.5vw,76px);overflow:hidden}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--rule);padding-bottom:22px}.mark{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.stamp{color:var(--red-dark);font-size:.72rem;font-weight:700;letter-spacing:.035em;line-height:1.55;text-align:right;text-transform:none}
+main{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:clamp(52px,8vh,82px) 0 0}.quote{height:clamp(250px,42vh,450px);overflow:hidden;font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.35rem,6.3vw,5.25rem);line-height:1.08;letter-spacing:-.045em;margin:0;max-width:780px}.quote::before{content:'“';display:inline;color:var(--red);font-size:1em;line-height:inherit;margin:0;vertical-align:baseline}.quote::after{content:'”';color:var(--red)}
+.attribution{margin-top:clamp(30px,5vh,52px);padding:15px 20px;border-left:3px solid var(--red);background:#f7f3ed;max-width:max-content}.book{font-family:Georgia,'Times New Roman',serif;font-size:1.12rem;font-style:italic;margin:0 0 6px}.author{color:var(--muted);font-size:.9rem;margin:0}.action{margin-top:clamp(34px,6vh,58px);display:flex;align-items:center;gap:18px;flex-wrap:wrap}.button{appearance:none;border:0;border-radius:2px;background:var(--red);color:#fff;min-height:54px;padding:0 22px;font-size:.75rem;font-weight:800;letter-spacing:.1em;cursor:pointer;box-shadow:0 5px 12px rgba(189,36,45,.16);transition:background .2s,transform .2s,box-shadow .2s}.button span{display:inline-block;margin-left:12px;font-size:1rem}.button:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 16px rgba(189,36,45,.2)}.button:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+footer{border-top:1px solid var(--rule);padding-top:17px;color:var(--muted);font-size:.7rem;line-height:1.55;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-title{color:var(--ink);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){body{padding:0;background:var(--paper)}.page{min-height:100vh;min-height:100svh;padding:25px 23px 20px;border-top-width:6px;box-shadow:none}.topline{align-items:flex-start;gap:14px;padding-bottom:18px}.mark{font-size:.66rem;letter-spacing:.09em}.stamp{max-width:155px;font-size:.65rem;line-height:1.5}main{padding:clamp(52px,9vh,78px) 0 30px}.quote{height:clamp(230px,37svh,330px);font-size:clamp(2.35rem,10vw,3.45rem);line-height:1.08}.attribution{margin-top:28px;padding:13px 16px}.book{font-size:1.04rem}.author{font-size:.86rem}.action{margin-top:30px}.button{width:100%;min-height:56px}footer{font-size:.65rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <div class="page">
-<header class="topline"><div class="mark">The Underground Library</div><div class="author">La città corre.<br>Fermati un momento:<br>lascia che siano le parole a portarti lontano.</div></header>
+<header class="topline"><div class="mark">The Underground Library</div><div class="stamp">La città corre.<br>fermati un momento:<br>lascia che siano le parole a portarti lontano.</div></header>
 <main aria-live="polite" aria-atomic="true">
 <blockquote class="quote" id="quote">Non tutti quelli che vagano sono perduti.</blockquote>
 <div class="attribution"><p class="book" id="book">Il Signore degli Anelli</p><p class="author" id="author">J.R.R. Tolkien</p></div>
@@ -51,11 +51,13 @@ const quotes = [
 let current = -1;
 let remaining = [];
 const quoteEl=document.getElementById('quote'), bookEl=document.getElementById('book'), authorEl=document.getElementById('author');
-function showQuote(index){const q=quotes[index];quoteEl.textContent=q.text;bookEl.textContent=q.book;authorEl.textContent=q.author;}
+function fitQuoteText(){quoteEl.style.fontSize='';let size=parseFloat(getComputedStyle(quoteEl).fontSize);while(quoteEl.scrollHeight>quoteEl.clientHeight+1&&size>16){size-=1;quoteEl.style.fontSize=`${size}px`;}}
+function showQuote(index){const q=quotes[index];quoteEl.textContent=q.text;bookEl.textContent=q.book;authorEl.textContent=q.author;fitQuoteText();}
 function shuffleQuotes(){remaining=quotes.map((_,index)=>index);for(let i=remaining.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[remaining[i],remaining[j]]=[remaining[j],remaining[i]];}if(remaining.length>1&&remaining[remaining.length-1]===current){[remaining[0],remaining[remaining.length-1]]=[remaining[remaining.length-1],remaining[0]];}}
 function showNextQuote(){if(remaining.length===0)shuffleQuotes();current=remaining.pop();showQuote(current);}
 document.getElementById('next').addEventListener('click',showNextQuote);
 showNextQuote();
+window.addEventListener('resize',fitQuoteText);
 </script>
 </body>
 </html>
