@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#c9232c">
+<meta name="description" content="The Underground Library — una citazione letteraria per il tuo viaggio.">
+<title>The Underground Library</title>
+<style>
+:root{--red:#c9232c;--ink:#171717;--paper:#f7f5f0;--muted:#77736d}
+*{box-sizing:border-box}html{min-height:100%;background:var(--red)}body{margin:0;min-height:100vh;padding:clamp(14px,3vw,34px);font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--red)}
+.page{position:relative;max-width:860px;min-height:calc(100vh - clamp(28px,6vw,68px));margin:auto;background:var(--paper);display:flex;flex-direction:column;padding:clamp(24px,6vw,66px);overflow:hidden}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #d8d3cb;padding-bottom:18px}.mark{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.stamp{color:var(--red);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-align:right;text-transform:uppercase}
+main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:clamp(44px,9vh,94px) 0}.eyebrow{color:var(--red);font-size:.76rem;font-weight:800;letter-spacing:.17em;text-transform:uppercase;margin:0 0 20px}.quote{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,6vw,4.65rem);line-height:1.12;letter-spacing:-.035em;margin:0;max-width:730px}.quote::before{content:'“';color:var(--red)}.quote::after{content:'”';color:var(--red)}
+.attribution{margin-top:clamp(28px,5vh,48px);padding-left:18px;border-left:3px solid var(--red)}.book{font-family:Georgia,'Times New Roman',serif;font-size:1.15rem;font-style:italic;margin:0 0 6px}.author{color:var(--muted);font-size:.92rem;margin:0}.action{margin-top:clamp(38px,7vh,64px);display:flex;align-items:center;gap:18px;flex-wrap:wrap}.button{appearance:none;border:0;background:var(--red);color:#fff;padding:16px 21px;font-size:.78rem;font-weight:800;letter-spacing:.1em;cursor:pointer;transition:background .2s,transform .2s}.button:hover{background:#a91c24;transform:translateY(-2px)}.button:focus-visible{outline:3px solid var(--ink);outline-offset:4px}.hint{color:var(--muted);font-size:.82rem}
+footer{border-top:1px solid #d8d3cb;padding-top:16px;color:var(--muted);font-size:.72rem;line-height:1.5;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-title{color:var(--ink);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:560px){body{padding:10px}.page{min-height:calc(100vh - 20px);padding:24px 22px}.topline{align-items:flex-start}.stamp{max-width:125px;line-height:1.5}main{padding:52px 0}.quote{font-size:clamp(2rem,10vw,3.1rem)}.action{align-items:flex-start;flex-direction:column}.button{width:100%}footer{font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topline"><div class="mark">The Underground Library</div><div class="stamp">La città corre.<br>Fermati un momento:<br>lascia che siano le parole a portarti lontano.</div></header>
+<main aria-live="polite" aria-atomic="true">
+<blockquote class="quote" id="quote">Non tutti quelli che vagano sono perduti.</blockquote>
+<div class="attribution"><p class="book" id="book">Il Signore degli Anelli</p><p class="author" id="author">J.R.R. Tolkien</p></div>
+<div class="action"><button class="button" id="next" type="button">UN'ALTRA CITAZIONE <span aria-hidden="true">↗</span></button></div>
+</main>
+<footer><span class="footer-title">Leggi. Viaggia. Immagina.</span><span>Progetto indipendente, non affiliato a NYPL o MTA.</span></footer>
+</div>
+<script>
+const quotes = [
+ {text:'Non tutti quelli che vagano sono perduti.',book:'Il Signore degli Anelli',author:'J.R.R. Tolkien'},
+ {text:'Le cose non si vedono bene che col cuore.',book:'Il piccolo principe',author:'Antoine de Saint-Exupéry'},
+ {text:'È il tempo che hai perduto per la tua rosa che ha fatto la tua rosa così importante.',book:'Il piccolo principe',author:'Antoine de Saint-Exupéry'},
+ {text:'Le strade si fanno andando.',book:'Proverbios y cantares',author:'Antonio Machado'},
+ {text:'Siamo fatti della stessa sostanza dei sogni.',book:'La tempesta',author:'William Shakespeare'},
+ {text:'Tutte le famiglie felici si somigliano; ogni famiglia infelice è infelice a modo suo.',book:'Anna Karenina',author:'Lev Tolstoj'},
+ {text:"Amare non è guardarsi l'un l'altro, ma guardare insieme nella stessa direzione.",book:'Terra degli uomini',author:'Antoine de Saint-Exupéry'},
+ {text:"L'essenziale è invisibile agli occhi.",book:'Il piccolo principe',author:'Antoine de Saint-Exupéry'},
+ {text:'Il cuore ha le sue ragioni che la ragione non conosce.',book:'Pensieri',author:'Blaise Pascal'},
+ {text:'La bellezza salverà il mondo.',book:'L’idiota',author:'Fëdor Dostoevskij'},
+ {text:'L’inferno dei viventi non è qualcosa che sarà; se ce n’è uno, è quello che è già qui.',book:'Le città invisibili',author:'Italo Calvino'},
+ {text:'La vita è sogno.',book:'La vita è sogno',author:'Pedro Calderón de la Barca'},
+ {text:'Dopo tutto, domani è un altro giorno.',book:'Via col vento',author:'Margaret Mitchell'},
+ {text:'Il coraggio, uno non se lo può dare.',book:'I promessi sposi',author:'Alessandro Manzoni'},
+ {text:'Se vogliamo che tutto rimanga com’è, bisogna che tutto cambi.',book:'Il Gattopardo',author:'Giuseppe Tomasi di Lampedusa'},
+ {text:'Prendete la vita con leggerezza, che leggerezza non è superficialità, ma planare sulle cose dall’alto, non avere macigni sul cuore.',book:'Lezioni americane',author:'Italo Calvino'},
+ {text:'Non capisco come si possa passare dinanzi a un albero, e non esser felice di vederlo.',book:'L’idiota',author:'Fëdor Dostoevskij'}
+];
+let current = -1;
+let remaining = [];
+const quoteEl=document.getElementById('quote'), bookEl=document.getElementById('book'), authorEl=document.getElementById('author');
+function showQuote(index){const q=quotes[index];quoteEl.textContent=q.text;bookEl.textContent=q.book;authorEl.textContent=q.author;}
+function shuffleQuotes(){remaining=quotes.map((_,index)=>index);for(let i=remaining.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[remaining[i],remaining[j]]=[remaining[j],remaining[i]];}if(remaining.length>1&&remaining[remaining.length-1]===current){[remaining[0],remaining[remaining.length-1]]=[remaining[remaining.length-1],remaining[0]];}}
+function showNextQuote(){if(remaining.length===0)shuffleQuotes();current=remaining.pop();showQuote(current);}
+document.getElementById('next').addEventListener('click',showNextQuote);
+showNextQuote();
+</script>
+</body>
+</html>
