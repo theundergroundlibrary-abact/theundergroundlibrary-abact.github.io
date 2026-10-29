@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#c9232c">
-<meta name="description" content="The Underground Library — una citazione letteraria per il tuo viaggio.">
-<title>The Underground Library</title>
+<meta name="description" content="The Subway Library — una citazione letteraria per il tuo viaggio.">
+<title>The Subway Library</title>
 <style>
 :root{--red:#c9232c;--red-dark:#a91c24;--ink:#201d1b;--paper:#fffdf9;--canvas:#eee9e1;--muted:#746e68;--rule:#e2ddd5}
 *{box-sizing:border-box}html{min-height:100%;background:var(--canvas)}body{margin:0;min-height:100vh;min-height:100svh;padding:clamp(16px,4vw,52px);font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:radial-gradient(circle at 8% 12%,rgba(201,35,44,.08) 0 2px,transparent 3px),var(--canvas)}
@@ -16,15 +16,21 @@ main{position:relative;flex:1;min-height:0;display:flex;flex-direction:column;ju
 footer{border-top:1px solid var(--rule);padding-top:17px;color:var(--muted);font-size:.7rem;line-height:1.55;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer-title{color:var(--ink);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:560px){body{padding:0;background:var(--paper)}.page{height:100svh;min-height:100svh;padding:25px 23px 20px;border-top-width:6px;box-shadow:none}.topline{align-items:flex-start;gap:14px;padding-bottom:18px}.mark,.city{font-size:.66rem;letter-spacing:.09em}.stamp{max-width:100%;font-size:.65rem;line-height:1.5;margin-top:7px}main{padding:clamp(52px,9vh,78px) 0 88px}.quote{max-height:clamp(230px,37svh,330px)}.quote-copy{font-size:clamp(2.35rem,10vw,3.45rem);line-height:1.08}.attribution{margin-top:24px;padding:13px 16px}.book{font-size:1.04rem}.author{font-size:.86rem}.action{right:0}.button{width:100%;min-height:56px}footer{font-size:.65rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+
+h1.mark{margin:0;font-family:Didot,"Bodoni 72","Bodoni MT",Georgia,serif;font-weight:700;text-transform:none;font-size:clamp(2.7rem,13.5vw,4.4rem);line-height:.95;letter-spacing:-.02em;font-style:italic}
+.city{font-family:Didot,"Bodoni 72",Georgia,serif;font-weight:700;letter-spacing:.35em;color:var(--red);font-size:.8rem}
+.topline{padding-bottom:16px}
+main{padding-top:30px;padding-bottom:150px}
+.invito{position:absolute;left:0;right:0;bottom:92px;margin:0;padding-top:14px;border-top:1px solid var(--rule);font-family:Didot,"Bodoni 72",Georgia,serif;font-style:italic;font-size:clamp(1.05rem,4.6vw,1.35rem);line-height:1.3;color:var(--red-dark)}
 </style>
 </head>
 <body>
 <div class="page">
-<header class="topline"><div class="brand"><div class="city">NEW YORK</div><div class="mark">The Underground Library</div><div class="stamp">La città corre.<br>Fermati un momento: lascia che<br>siano le parole a portarti lontano.</div></div></header>
+<header class="topline"><div class="brand"><div class="city">NEW YORK</div><h1 class="mark">The Subway<br>Library</h1></div></header>
 <main aria-live="polite" aria-atomic="true">
 <blockquote class="quote"><span class="quote-copy" id="quote">Non tutti quelli che vagano sono perduti.</span></blockquote>
 <div class="attribution"><p class="book" id="book">Il Signore degli Anelli</p><p class="author" id="author">J.R.R. Tolkien</p></div>
-<div class="action"><button class="button" id="next" type="button">UN'ALTRA CITAZIONE <span aria-hidden="true">↗</span></button></div>
+<p class="invito">La città corre. Fermati un momento: lascia che siano le parole a portarti lontano.</p><div class="action"><button class="button" id="next" type="button">UN'ALTRA CITAZIONE <span aria-hidden="true">↗</span></button></div>
 </main>
 <footer><span class="footer-title">Leggi. Viaggia. Immagina.</span><span>Progetto indipendente, non affiliato a NYPL o MTA.</span></footer>
 </div>
